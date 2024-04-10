@@ -1,11 +1,6 @@
-import { ILineLayout } from "src/layout/ILineLayout";
-import { GraphLineType, Point } from "src/basic";
-import {
-  CurveLine,
-  GraphicNode,
-  GraphLinkLine,
-  IGraphicLine,
-} from "src/graphic";
+import { ILineLayout } from "@/layout/ILineLayout";
+import { GraphLineType, Point } from "@/basic";
+import { CurveLine, GraphicNode, GraphLinkLine, IGraphicLine } from "@/graphic";
 import { GraphicUtils } from "@/utils";
 export class CurveLineLayout extends ILineLayout {
   type: GraphLineType = GraphLineType.Curve;
