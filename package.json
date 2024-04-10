@@ -1,8 +1,9 @@
 {
   "name": "dahongpao-core",
   "private": false,
-  "version": "0.0.0-alpha-1",
+  "version": "0.0.0-alpha-3",
   "type": "module",
+  "types": "src/index.d.ts",
   "scripts": {
     "dev": "vite",
     "prepare": "husky install",
