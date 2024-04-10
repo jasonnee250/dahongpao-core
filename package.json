@@ -5,15 +5,39 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "prepare": "husky install",
+    "build": "vite build",
     "lint": "eslint dahongpao-core --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "lint-staged": "lint-staged",
+    "preview": "vite preview",
+    "genAntlr": "./scripts/genAntlr.sh"
+  },
+  "dependencies": {
+    "antlr4": "4.13.1-patch-1"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "typescript": "^5.2.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "vite": "^5.2.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{html,vue,vss,sass,less}": [
+      "prettier --write"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }
