@@ -1,9 +1,14 @@
 {
   "name": "dahongpao-core",
   "private": false,
-  "version": "0.0.0-alpha-6",
+  "version": "0.0.0-alpha-9",
+  "main": "dist/dahongpao-core.umd.cjs",
+  "module": "dist/dahongpao-core.js",
   "type": "module",
-  "types": "src/index.d.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "prepare": "husky install",
