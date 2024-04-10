@@ -1,0 +1,1 @@
+antlr4 ./src/parser/grammar/*.g4 -Dlanguage=TypeScript
