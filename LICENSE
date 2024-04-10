@@ -1,15 +1,3 @@
-[Click Here for English ReadMe](./README.en.md)
-
-# dahongpao-core(大红袍-core)
-
-「大红袍」核心接口库，定义了项目中基本数据类型和语法解析；更多详见：[大红袍](https://github.com/jasonnee250/Dahongpao)
-
-## Contributors
-
-- JasonNee(danileo250@163.com)
-
-## License
-
 MIT License
 
 Copyright (c) 2023 JasonNee
