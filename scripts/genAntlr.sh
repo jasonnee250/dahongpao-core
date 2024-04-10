@@ -1,1 +1,3 @@
-antlr4 ./src/parser/grammar/*.g4 -Dlanguage=TypeScript
+# shellcheck disable=SC2164
+cd src/parser/grammar
+antlr4 *.g4 -Dlanguage=TypeScript -o ./basic
