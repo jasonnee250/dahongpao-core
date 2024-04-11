@@ -1,4 +1,4 @@
-import { IGraphicElement } from "@/graphic/IGraphicElement.ts";
+import { IGraphicElement } from "./IGraphicElement.ts";
 import { LineArrowType } from "@/basic/LineArrowType.ts";
 import { RectNode } from "@/basic/RectNode.ts";
 

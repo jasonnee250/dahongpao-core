@@ -1,5 +1,5 @@
 //折线
-import { IGraphicLine } from "@/graphic/IGraphicLine";
+import { IGraphicLine } from "./IGraphicLine";
 import { Point } from "@/basic/Point";
 import { RectNode } from "@/basic/RectNode";
 import { GraphicUtils } from "@/utils";

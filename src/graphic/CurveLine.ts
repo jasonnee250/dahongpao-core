@@ -1,6 +1,6 @@
 import { Point } from "@/basic/Point.ts";
-import { IGraphicLine } from "@/graphic/IGraphicLine.ts";
-import { RectNode } from "src/basic/RectNode";
+import { IGraphicLine } from "./IGraphicLine.ts";
+import { RectNode } from "@/basic/RectNode";
 import { GraphicUtils } from "@/utils";
 
 export class CurveLine extends IGraphicLine {

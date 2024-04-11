@@ -1,6 +1,6 @@
 //直线
 import { Point, RectNode } from "@/basic";
-import { IGraphicLine } from "@/graphic/IGraphicLine.ts";
+import { IGraphicLine } from "./IGraphicLine.ts";
 import { GraphicUtils } from "@/utils";
 
 export class SimpleLine extends IGraphicLine {

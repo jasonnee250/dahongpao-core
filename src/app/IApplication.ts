@@ -1,6 +1,6 @@
 import { GMLRender } from "@/render";
-import { IPlugin } from "@/app/IPlugin.ts";
-import { AbsNodeManager } from "@/app/AbsNodeManager.ts";
+import { IPlugin } from "./IPlugin.ts";
+import { AbsNodeManager } from "./AbsNodeManager.ts";
 
 export interface IApplication {
   //渲染
@@ -17,4 +17,6 @@ export interface IApplication {
   parse(text: string): void;
 
   redraw(): void;
+
+  registerPlugin(plugin: IPlugin): void;
 }
