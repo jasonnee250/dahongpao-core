@@ -1,6 +1,9 @@
+import { RectNode } from "@/basic";
 
 export interface IGraphicElement {
-    zIndex: number;
+  zIndex: number;
 
-    draw(): void;
+  draw(): void;
+
+  getRectNode(): RectNode;
 }

@@ -9,7 +9,7 @@ export class PolyLine extends IGraphicLine {
 
   draw(): void {}
 
-  getTreeNode(): RectNode {
+  getRectNode(): RectNode {
     const bounds = GraphicUtils.getBoundsByPoints(this.points);
     bounds.minX = bounds.minX - this.width;
     bounds.minY = bounds.minY - this.width;

@@ -1,23 +1,21 @@
-
 //直线
-import {Point, RectNode} from "@/basic";
-import {IGraphicLine} from "@/graphic/IGraphicLine.ts";
-import {GraphicUtils} from "@/utils";
+import { Point, RectNode } from "@/basic";
+import { IGraphicLine } from "@/graphic/IGraphicLine.ts";
+import { GraphicUtils } from "@/utils";
 
 export class SimpleLine extends IGraphicLine {
-    start: Point = new Point(0, 0);
-    end: Point = new Point(0, 0);
+  start: Point = new Point(0, 0);
+  end: Point = new Point(0, 0);
 
-    draw() {
-    }
+  draw() {}
 
-    getTreeNode(): RectNode {
-        const bounds = GraphicUtils.getBoundsByPoints([this.start, this.end]);
-        bounds.minX = bounds.minX - this.width;
-        bounds.minY = bounds.minY - this.width;
-        bounds.maxX = bounds.maxX + 2 * this.width;
-        bounds.maxY = bounds.maxY + 2 * this.width;
-        bounds.id = this.id;
-        return bounds;
-    }
+  getRectNode(): RectNode {
+    const bounds = GraphicUtils.getBoundsByPoints([this.start, this.end]);
+    bounds.minX = bounds.minX - this.width;
+    bounds.minY = bounds.minY - this.width;
+    bounds.maxX = bounds.maxX + 2 * this.width;
+    bounds.maxY = bounds.maxY + 2 * this.width;
+    bounds.id = this.id;
+    return bounds;
+  }
 }
