@@ -1,7 +1,7 @@
 import { IGraphicLine } from "@/graphic/IGraphicLine";
 import { GraphicNode } from "@/graphic/GraphicNode";
 import { GraphLinkLine } from "@/graphic/GraphicLinkLine";
-import { RectNode } from "@/basic";
+import { Point, RectNode, TransformMatrix } from "@/basic";
 import { IGraphicElement } from "@/graphic";
 
 export interface GMLData {
@@ -11,7 +11,8 @@ export interface GMLData {
 }
 
 export interface GMLRender {
-  canvas: HTMLElement | null;
+  canvas: HTMLCanvasElement | null;
+  globalTransform: TransformMatrix;
   init(element: HTMLCanvasElement): void;
   reset(): void;
   parse2GMLData(text: string): GMLData;
@@ -29,4 +30,7 @@ export interface GMLRender {
   translation(dx: number, dy: number): void;
   resetTransform(): void;
   dirtyDraw(bounds: RectNode, graphicList: IGraphicElement[]): void;
+  getViewPortBounds(): RectNode;
+  getGlobalPoint(): Point;
+  transformToGlobal(point: Point): Point;
 }
