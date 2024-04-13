@@ -163,6 +163,28 @@ export class GraphicUtils {
       point.y < node.y + node.h
     );
   }
+
+  /**
+   * 判断在矩形方法。入参为rect node
+   * @param point
+   * @param node
+   */
+  static rectContains2(point: Point, node: RectNode): boolean {
+    return (
+      point.x > node.minX &&
+      point.x < node.maxX &&
+      point.y > node.minY &&
+      point.y < node.maxY
+    );
+  }
+
+  static circleContains(point: Point, center: Point, r: number): boolean {
+    return (
+      (point.x - center.x) * (point.x - center.x) +
+        (point.y - center.y) * (point.y - center.y) <
+      r * r
+    );
+  }
   /**
    * 计算亮点之间距离
    */
