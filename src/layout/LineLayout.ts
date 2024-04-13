@@ -8,6 +8,9 @@ import {
 } from "@/graphic";
 import { GraphicUtils } from "@/utils";
 
+/**
+ * 直线计算布局
+ */
 export class LineLayout extends ILineLayout {
   type: GraphLineType = GraphLineType.Line;
 

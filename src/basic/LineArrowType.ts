@@ -1,4 +1,13 @@
+/**
+ * 连线箭头类型
+ */
 export enum LineArrowType {
-    None,
-    Arrow,
+  /**
+   * 无箭头
+   */
+  None,
+  /**
+   * 连线箭头-->
+   */
+  Arrow,
 }

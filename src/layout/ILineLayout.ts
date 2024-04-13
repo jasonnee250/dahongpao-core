@@ -1,8 +1,22 @@
-import {GraphLineType} from "@/basic";
-import {GraphicNode, GraphLinkLine, IGraphicLine} from "@/graphic";
+import { GraphLineType } from "@/basic";
+import { GraphicNode, GraphLinkLine, IGraphicLine } from "@/graphic";
 
+/**
+ * 连线计算的布局规则
+ */
 export abstract class ILineLayout {
-    abstract type: GraphLineType;
+  /**
+   * 类型
+   */
+  abstract type: GraphLineType;
 
-    abstract layout(nodeMap: Map<string, GraphicNode>, linkLine: GraphLinkLine): IGraphicLine | null;
+  /**
+   * 布局计算接口
+   * @param nodeMap
+   * @param linkLine
+   */
+  abstract layout(
+    nodeMap: Map<string, GraphicNode>,
+    linkLine: GraphLinkLine,
+  ): IGraphicLine | null;
 }

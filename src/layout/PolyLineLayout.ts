@@ -3,6 +3,9 @@ import { GraphLineType, Point } from "@/basic";
 import { GraphicNode, GraphLinkLine, IGraphicLine, PolyLine } from "@/graphic";
 import { GraphicUtils } from "@/utils";
 
+/**
+ * 折线计算布局
+ */
 export class PolyLineLayout extends ILineLayout {
   type: GraphLineType = GraphLineType.PolyLine;
 

@@ -2,9 +2,18 @@ import { ILineLayout } from "@/layout/ILineLayout";
 import { GraphLineType, Point } from "@/basic";
 import { CurveLine, GraphicNode, GraphLinkLine, IGraphicLine } from "@/graphic";
 import { GraphicUtils } from "@/utils";
+
+/**
+ * 曲线布局计算规则
+ */
 export class CurveLineLayout extends ILineLayout {
   type: GraphLineType = GraphLineType.Curve;
 
+  /**
+   * 生产绘制曲线，目前是三次贝塞尔曲线
+   * @param nodeMap 节点列表
+   * @param linkLine 连线关系
+   */
   layout(
     nodeMap: Map<string, GraphicNode>,
     linkLine: GraphLinkLine,

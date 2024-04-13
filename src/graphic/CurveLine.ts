@@ -3,6 +3,9 @@ import { IGraphicLine } from "./IGraphicLine.ts";
 import { RectNode } from "@/basic/RectNode";
 import { GraphicUtils } from "@/utils";
 
+/**
+ * 曲线数据定义
+ */
 export class CurveLine extends IGraphicLine {
   points: Point[] = [];
 
