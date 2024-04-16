@@ -1,6 +1,7 @@
 import { RectNode } from "@/basic/RectNode.ts";
 import { IGraphicElement } from "./IGraphicElement.ts";
 import { GraphicNodeType } from "@/basic/GraphicNodeType.ts";
+import { TextAlignType } from "@/basic/TextAlignType.ts";
 
 /**
  * 图形绘制节点基本数据类型
@@ -70,6 +71,14 @@ export class GraphicNode implements IGraphicElement {
    * 节点z-index,表示层级
    */
   zIndex: number = 0; //用于层级排序
+  /**
+   * 文本横向对齐形式
+   */
+  horizonAlign: TextAlignType = TextAlignType.CENTER;
+  /**
+   * 文本纵向对齐形式
+   */
+  verticalAlign: TextAlignType = TextAlignType.CENTER;
 
   constructor(id: string) {
     this.id = id;
