@@ -27,4 +27,8 @@ export enum GraphicNodeType {
    * 三角形
    */
   Triangle,
+  /**
+   * 文字
+   */
+  Text,
 }
