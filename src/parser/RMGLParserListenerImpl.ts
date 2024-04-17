@@ -84,6 +84,9 @@ export class RMGLParserListenerImpl extends RMGLParserListener {
     if (typeCtx.Triangle()) {
       return GraphicNodeType.Triangle;
     }
+    if (typeCtx.TextType()) {
+      return GraphicNodeType.Text;
+    }
     return GraphicNodeType.Rect;
   }
 

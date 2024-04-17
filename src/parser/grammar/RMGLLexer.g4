@@ -7,6 +7,7 @@ Diamond:'Diamond';//菱形
 Parallelogram:'Parallelogram';//平行四边形
 Trapezoid:'Trapezoid';//梯形
 Triangle:'Triangle';//三角形
+TextType:'Text';//文字
 //连线
 Line: '--';
 SimpleLine:'-line-';

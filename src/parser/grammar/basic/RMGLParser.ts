@@ -23,37 +23,38 @@ export default class RMGLParser extends Parser {
 	public static readonly Parallelogram = 4;
 	public static readonly Trapezoid = 5;
 	public static readonly Triangle = 6;
-	public static readonly Line = 7;
-	public static readonly SimpleLine = 8;
-	public static readonly PolyLine = 9;
-	public static readonly CurveLine = 10;
-	public static readonly LArrow = 11;
-	public static readonly RArrow = 12;
-	public static readonly X = 13;
-	public static readonly Y = 14;
-	public static readonly W = 15;
-	public static readonly H = 16;
-	public static readonly Angle = 17;
-	public static readonly Color = 18;
-	public static readonly Text = 19;
-	public static readonly Alpha = 20;
-	public static readonly BorderWidth = 21;
-	public static readonly BorderColor = 22;
-	public static readonly BorderAlpha = 23;
-	public static readonly FontSize = 24;
-	public static readonly FontColor = 25;
-	public static readonly Comma = 26;
-	public static readonly Semicolon = 27;
-	public static readonly Quotation = 28;
-	public static readonly Slash = 29;
-	public static readonly TokenChar = 30;
-	public static readonly NL = 31;
-	public static readonly Space = 32;
-	public static readonly Char = 33;
-	public static readonly AnnotationQuotation = 34;
-	public static readonly AnnotationChar = 35;
-	public static readonly LineAnnotationNL = 36;
-	public static readonly LineAnnotationChar = 37;
+	public static readonly TextType = 7;
+	public static readonly Line = 8;
+	public static readonly SimpleLine = 9;
+	public static readonly PolyLine = 10;
+	public static readonly CurveLine = 11;
+	public static readonly LArrow = 12;
+	public static readonly RArrow = 13;
+	public static readonly X = 14;
+	public static readonly Y = 15;
+	public static readonly W = 16;
+	public static readonly H = 17;
+	public static readonly Angle = 18;
+	public static readonly Color = 19;
+	public static readonly Text = 20;
+	public static readonly Alpha = 21;
+	public static readonly BorderWidth = 22;
+	public static readonly BorderColor = 23;
+	public static readonly BorderAlpha = 24;
+	public static readonly FontSize = 25;
+	public static readonly FontColor = 26;
+	public static readonly Comma = 27;
+	public static readonly Semicolon = 28;
+	public static readonly Quotation = 29;
+	public static readonly Slash = 30;
+	public static readonly TokenChar = 31;
+	public static readonly NL = 32;
+	public static readonly Space = 33;
+	public static readonly Char = 34;
+	public static readonly AnnotationQuotation = 35;
+	public static readonly AnnotationChar = 36;
+	public static readonly LineAnnotationNL = 37;
+	public static readonly LineAnnotationChar = 38;
 	public static readonly EOF = Token.EOF;
 	public static readonly RULE_statement = 0;
 	public static readonly RULE_variableName = 1;
@@ -72,7 +73,8 @@ export default class RMGLParser extends Parser {
                                                             "'Parallelogram'", 
                                                             "'Trapezoid'", 
                                                             "'Triangle'", 
-                                                            "'--'", "'-line-'", 
+                                                            "'Text'", "'--'", 
+                                                            "'-line-'", 
                                                             "'-poly-'", 
                                                             "'-curve-'", 
                                                             "'<'", "'>'", 
@@ -92,6 +94,7 @@ export default class RMGLParser extends Parser {
                                                              "Parallelogram", 
                                                              "Trapezoid", 
                                                              "Triangle", 
+                                                             "TextType", 
                                                              "Line", "SimpleLine", 
                                                              "PolyLine", 
                                                              "CurveLine", 
@@ -143,7 +146,7 @@ export default class RMGLParser extends Parser {
 			this.state = 25;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la===31) {
+			while (_la===32) {
 				{
 				{
 				this.state = 22;
@@ -168,18 +171,19 @@ export default class RMGLParser extends Parser {
 				case 4:
 				case 5:
 				case 6:
+				case 7:
 					{
 					this.state = 28;
 					this.lineGraphicDefine();
 					}
 					break;
-				case 29:
+				case 30:
 					{
 					this.state = 29;
 					this.annotationDefine();
 					}
 					break;
-				case 30:
+				case 31:
 					{
 					this.state = 30;
 					this.linkDefine();
@@ -192,7 +196,7 @@ export default class RMGLParser extends Parser {
 				this.state = 33;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-			} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & 1610612862) !== 0));
+			} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & 3221225726) !== 0));
 			}
 		}
 		catch (re) {
@@ -270,7 +274,7 @@ export default class RMGLParser extends Parser {
 			this.state = 42;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la===35) {
+			while (_la===36) {
 				{
 				{
 				this.state = 39;
@@ -308,7 +312,7 @@ export default class RMGLParser extends Parser {
 			this.state = 48;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la===37) {
+			while (_la===38) {
 				{
 				{
 				this.state = 45;
@@ -369,29 +373,29 @@ export default class RMGLParser extends Parser {
 			this.state = 65;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & 67100672) !== 0)) {
+			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & 134201344) !== 0)) {
 				{
 				this.state = 63;
 				this._errHandler.sync(this);
 				switch (this._input.LA(1)) {
-				case 13:
 				case 14:
 				case 15:
 				case 16:
 				case 17:
 				case 18:
-				case 20:
+				case 19:
 				case 21:
 				case 22:
 				case 23:
 				case 24:
 				case 25:
+				case 26:
 					{
 					this.state = 61;
 					this.propertyDefine();
 					}
 					break;
-				case 19:
+				case 20:
 					{
 					this.state = 62;
 					this.textDefine();
@@ -408,7 +412,7 @@ export default class RMGLParser extends Parser {
 			this.state = 71;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la===31) {
+			while (_la===32) {
 				{
 				{
 				this.state = 68;
@@ -445,7 +449,7 @@ export default class RMGLParser extends Parser {
 			{
 			this.state = 74;
 			_la = this._input.LA(1);
-			if(!((((_la) & ~0x1F) === 0 && ((1 << _la) & 126) !== 0))) {
+			if(!((((_la) & ~0x1F) === 0 && ((1 << _la) & 254) !== 0))) {
 			this._errHandler.recoverInline(this);
 			}
 			else {
@@ -478,7 +482,7 @@ export default class RMGLParser extends Parser {
 			{
 			this.state = 76;
 			_la = this._input.LA(1);
-			if(!((((_la) & ~0x1F) === 0 && ((1 << _la) & 66576384) !== 0))) {
+			if(!((((_la) & ~0x1F) === 0 && ((1 << _la) & 133152768) !== 0))) {
 			this._errHandler.recoverInline(this);
 			}
 			else {
@@ -489,7 +493,7 @@ export default class RMGLParser extends Parser {
 			this.charText();
 			this.state = 78;
 			_la = this._input.LA(1);
-			if(!(_la===26 || _la===27)) {
+			if(!(_la===27 || _la===28)) {
 			this._errHandler.recoverInline(this);
 			}
 			else {
@@ -530,7 +534,7 @@ export default class RMGLParser extends Parser {
 			this.match(RMGLParser.AnnotationQuotation);
 			this.state = 84;
 			_la = this._input.LA(1);
-			if(!(_la===26 || _la===27)) {
+			if(!(_la===27 || _la===28)) {
 			this._errHandler.recoverInline(this);
 			}
 			else {
@@ -570,7 +574,7 @@ export default class RMGLParser extends Parser {
 			this.state = 92;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la===31) {
+			while (_la===32) {
 				{
 				{
 				this.state = 89;
@@ -610,7 +614,7 @@ export default class RMGLParser extends Parser {
 			this.state = 97;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (_la===11) {
+			if (_la===12) {
 				{
 				this.state = 96;
 				this.match(RMGLParser.LArrow);
@@ -619,7 +623,7 @@ export default class RMGLParser extends Parser {
 
 			this.state = 99;
 			_la = this._input.LA(1);
-			if(!((((_la) & ~0x1F) === 0 && ((1 << _la) & 1920) !== 0))) {
+			if(!((((_la) & ~0x1F) === 0 && ((1 << _la) & 3840) !== 0))) {
 			this._errHandler.recoverInline(this);
 			}
 			else {
@@ -629,7 +633,7 @@ export default class RMGLParser extends Parser {
 			this.state = 101;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (_la===12) {
+			if (_la===13) {
 				{
 				this.state = 100;
 				this.match(RMGLParser.RArrow);
@@ -640,7 +644,7 @@ export default class RMGLParser extends Parser {
 			this.match(RMGLParser.TokenChar);
 			this.state = 104;
 			_la = this._input.LA(1);
-			if(!(_la===26 || _la===27)) {
+			if(!(_la===27 || _la===28)) {
 			this._errHandler.recoverInline(this);
 			}
 			else {
@@ -650,7 +654,7 @@ export default class RMGLParser extends Parser {
 			this.state = 108;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la===31) {
+			while (_la===32) {
 				{
 				{
 				this.state = 105;
@@ -678,7 +682,7 @@ export default class RMGLParser extends Parser {
 		return localctx;
 	}
 
-	public static readonly _serializedATN: number[] = [4,1,37,112,2,0,7,0,2,
+	public static readonly _serializedATN: number[] = [4,1,38,112,2,0,7,0,2,
 	1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,7,7,2,8,7,8,2,9,7,9,2,
 	10,7,10,1,0,5,0,24,8,0,10,0,12,0,27,9,0,1,0,1,0,1,0,4,0,32,8,0,11,0,12,
 	0,33,1,1,1,1,1,2,1,2,1,3,5,3,41,8,3,10,3,12,3,44,9,3,1,4,5,4,47,8,4,10,
@@ -687,29 +691,29 @@ export default class RMGLParser extends Parser {
 	7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,5,9,91,8,9,10,9,12,9,
 	94,9,9,1,10,1,10,3,10,98,8,10,1,10,1,10,3,10,102,8,10,1,10,1,10,1,10,5,
 	10,107,8,10,10,10,12,10,110,9,10,1,10,0,0,11,0,2,4,6,8,10,12,14,16,18,20,
-	0,4,1,0,1,6,2,0,13,18,20,25,1,0,26,27,1,0,7,10,114,0,25,1,0,0,0,2,35,1,
+	0,4,1,0,1,7,2,0,14,19,21,26,1,0,27,28,1,0,8,11,114,0,25,1,0,0,0,2,35,1,
 	0,0,0,4,37,1,0,0,0,6,42,1,0,0,0,8,48,1,0,0,0,10,51,1,0,0,0,12,74,1,0,0,
-	0,14,76,1,0,0,0,16,80,1,0,0,0,18,86,1,0,0,0,20,95,1,0,0,0,22,24,5,31,0,
+	0,14,76,1,0,0,0,16,80,1,0,0,0,18,86,1,0,0,0,20,95,1,0,0,0,22,24,5,32,0,
 	0,23,22,1,0,0,0,24,27,1,0,0,0,25,23,1,0,0,0,25,26,1,0,0,0,26,31,1,0,0,0,
 	27,25,1,0,0,0,28,32,3,10,5,0,29,32,3,18,9,0,30,32,3,20,10,0,31,28,1,0,0,
 	0,31,29,1,0,0,0,31,30,1,0,0,0,32,33,1,0,0,0,33,31,1,0,0,0,33,34,1,0,0,0,
-	34,1,1,0,0,0,35,36,5,30,0,0,36,3,1,0,0,0,37,38,5,30,0,0,38,5,1,0,0,0,39,
-	41,5,35,0,0,40,39,1,0,0,0,41,44,1,0,0,0,42,40,1,0,0,0,42,43,1,0,0,0,43,
-	7,1,0,0,0,44,42,1,0,0,0,45,47,5,37,0,0,46,45,1,0,0,0,47,50,1,0,0,0,48,46,
+	34,1,1,0,0,0,35,36,5,31,0,0,36,3,1,0,0,0,37,38,5,31,0,0,38,5,1,0,0,0,39,
+	41,5,36,0,0,40,39,1,0,0,0,41,44,1,0,0,0,42,40,1,0,0,0,42,43,1,0,0,0,43,
+	7,1,0,0,0,44,42,1,0,0,0,45,47,5,38,0,0,46,45,1,0,0,0,47,50,1,0,0,0,48,46,
 	1,0,0,0,48,49,1,0,0,0,49,9,1,0,0,0,50,48,1,0,0,0,51,57,3,12,6,0,52,53,3,
-	2,1,0,53,54,5,26,0,0,54,56,1,0,0,0,55,52,1,0,0,0,56,59,1,0,0,0,57,55,1,
+	2,1,0,53,54,5,27,0,0,54,56,1,0,0,0,55,52,1,0,0,0,56,59,1,0,0,0,57,55,1,
 	0,0,0,57,58,1,0,0,0,58,60,1,0,0,0,59,57,1,0,0,0,60,65,3,2,1,0,61,64,3,14,
 	7,0,62,64,3,16,8,0,63,61,1,0,0,0,63,62,1,0,0,0,64,67,1,0,0,0,65,63,1,0,
-	0,0,65,66,1,0,0,0,66,71,1,0,0,0,67,65,1,0,0,0,68,70,5,31,0,0,69,68,1,0,
+	0,0,65,66,1,0,0,0,66,71,1,0,0,0,67,65,1,0,0,0,68,70,5,32,0,0,69,68,1,0,
 	0,0,70,73,1,0,0,0,71,69,1,0,0,0,71,72,1,0,0,0,72,11,1,0,0,0,73,71,1,0,0,
 	0,74,75,7,0,0,0,75,13,1,0,0,0,76,77,7,1,0,0,77,78,3,4,2,0,78,79,7,2,0,0,
-	79,15,1,0,0,0,80,81,5,19,0,0,81,82,5,28,0,0,82,83,3,6,3,0,83,84,5,34,0,
-	0,84,85,7,2,0,0,85,17,1,0,0,0,86,87,5,29,0,0,87,88,3,8,4,0,88,92,5,36,0,
-	0,89,91,5,31,0,0,90,89,1,0,0,0,91,94,1,0,0,0,92,90,1,0,0,0,92,93,1,0,0,
-	0,93,19,1,0,0,0,94,92,1,0,0,0,95,97,5,30,0,0,96,98,5,11,0,0,97,96,1,0,0,
-	0,97,98,1,0,0,0,98,99,1,0,0,0,99,101,7,3,0,0,100,102,5,12,0,0,101,100,1,
-	0,0,0,101,102,1,0,0,0,102,103,1,0,0,0,103,104,5,30,0,0,104,108,7,2,0,0,
-	105,107,5,31,0,0,106,105,1,0,0,0,107,110,1,0,0,0,108,106,1,0,0,0,108,109,
+	79,15,1,0,0,0,80,81,5,20,0,0,81,82,5,29,0,0,82,83,3,6,3,0,83,84,5,35,0,
+	0,84,85,7,2,0,0,85,17,1,0,0,0,86,87,5,30,0,0,87,88,3,8,4,0,88,92,5,37,0,
+	0,89,91,5,32,0,0,90,89,1,0,0,0,91,94,1,0,0,0,92,90,1,0,0,0,92,93,1,0,0,
+	0,93,19,1,0,0,0,94,92,1,0,0,0,95,97,5,31,0,0,96,98,5,12,0,0,97,96,1,0,0,
+	0,97,98,1,0,0,0,98,99,1,0,0,0,99,101,7,3,0,0,100,102,5,13,0,0,101,100,1,
+	0,0,0,101,102,1,0,0,0,102,103,1,0,0,0,103,104,5,31,0,0,104,108,7,2,0,0,
+	105,107,5,32,0,0,106,105,1,0,0,0,107,110,1,0,0,0,108,106,1,0,0,0,108,109,
 	1,0,0,0,109,21,1,0,0,0,110,108,1,0,0,0,13,25,31,33,42,48,57,63,65,71,92,
 	97,101,108];
 
@@ -950,6 +954,9 @@ export class GraphicTypeContext extends ParserRuleContext {
 	}
 	public Triangle(): TerminalNode {
 		return this.getToken(RMGLParser.Triangle, 0);
+	}
+	public TextType(): TerminalNode {
+		return this.getToken(RMGLParser.TextType, 0);
 	}
     public get ruleIndex(): number {
     	return RMGLParser.RULE_graphicType;
