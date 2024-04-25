@@ -31,7 +31,8 @@ BorderColor:'borderColor';
 BorderAlpha:'borderAlpha';
 FontSize:'fontSize';
 FontColor:'fontColor';
-
+HorizonAlign:'horizonAlign';
+VerticalAlign:'verticalAlign';
 //符号
 Comma:',';
 Semicolon:';';

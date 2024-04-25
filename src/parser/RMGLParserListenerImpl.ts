@@ -8,7 +8,7 @@ import {
   StatementContext,
   TextDefineContext,
 } from "@/parser/grammar/basic/RMGLParser";
-import { GraphicNodeType, GraphLineType, LineArrowType } from "@/basic";
+import {convert2TextAlignType, GraphicNodeType, GraphLineType, LineArrowType} from "@/basic";
 
 /**
  * 语法树解析主逻辑
@@ -124,6 +124,10 @@ export class RMGLParserListenerImpl extends RMGLParserListener {
         node.fontSize = parseFloat(property.charText().getText());
       } else if (property.FontColor()) {
         node.fontColor = parseInt(property.charText().getText());
+      } else if (property.HorizonAlign()) {
+        node.horizonAlign = convert2TextAlignType(parseInt(property.charText().getText()));
+      } else if (property.VerticalAlign()) {
+        node.verticalAlign = convert2TextAlignType(parseInt(property.charText().getText()));
       }
     }
   }

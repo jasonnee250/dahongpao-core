@@ -79,8 +79,8 @@ export class AffineMatrix {
    */
   crossPoint(p: Point): Point {
     return new Point(
-      this.a * p.x + this.b * p.y + this.c,
-      this.d * p.x + this.e * p.y + this.f,
+      this.a * p.x + this.c * p.y + this.e,
+      this.b * p.x + this.d * p.y + this.f,
     );
   }
 }

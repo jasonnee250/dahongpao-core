@@ -68,6 +68,10 @@ export class GraphicNode implements IGraphicElement {
    */
   fontSize: number = 14;
   /**
+   * 字体
+   */
+  fontFamily:string = 'Arial';
+  /**
    * 节点z-index,表示层级
    */
   zIndex: number = 0; //用于层级排序
