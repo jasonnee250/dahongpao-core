@@ -105,4 +105,9 @@ export interface GMLRender {
    * @param point
    */
   transformToGlobal(point: Point): Point;
+
+  /**
+   * 获取当前渲染引擎scale
+   */
+  getScale(): number;
 }

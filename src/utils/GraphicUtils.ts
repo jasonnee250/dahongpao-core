@@ -171,10 +171,10 @@ export class GraphicUtils {
    */
   static rectContains2(point: Point, node: RectNode): boolean {
     return (
-      point.x > node.minX &&
-      point.x < node.maxX &&
-      point.y > node.minY &&
-      point.y < node.maxY
+      point.x >= node.minX &&
+      point.x <= node.maxX &&
+      point.y >= node.minY &&
+      point.y <= node.maxY
     );
   }
 
