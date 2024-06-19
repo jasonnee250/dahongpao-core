@@ -45,4 +45,9 @@ export interface IApplication {
    * @param plugin 插件
    */
   registerPlugin(plugin: IPlugin): void;
+
+  /**
+   * 重绘屏幕范围内的节点
+   */
+  redrawWithinViewBounds(): void;
 }

@@ -107,6 +107,11 @@ export interface GMLRender {
   transformToGlobal(point: Point): Point;
 
   /**
+   * 坐标变换，将画布坐标点转化为client坐标
+   * @param point
+   */
+  transformToLocal(point: Point): Point;
+  /**
    * 获取当前渲染引擎scale
    */
   getScale(): number;
