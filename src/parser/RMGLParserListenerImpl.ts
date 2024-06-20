@@ -8,7 +8,12 @@ import {
   StatementContext,
   TextDefineContext,
 } from "@/parser/grammar/basic/RMGLParser";
-import {convert2TextAlignType, GraphicNodeType, GraphLineType, LineArrowType} from "@/basic";
+import {
+  convert2TextAlignType,
+  GraphicNodeType,
+  GraphLineType,
+  LineArrowType,
+} from "@/basic";
 
 /**
  * 语法树解析主逻辑
@@ -113,9 +118,9 @@ export class RMGLParserListenerImpl extends RMGLParserListener {
       } else if (property.Alpha()) {
         node.alpha = parseFloat(property.charText().getText());
       } else if (property.Color()) {
-        node.color = parseInt(property.charText().getText());
+        node.color = property.charText().getText();
       } else if (property.BorderColor()) {
-        node.borderColor = parseInt(property.charText().getText());
+        node.borderColor = property.charText().getText();
       } else if (property.BorderAlpha()) {
         node.borderAlpha = parseFloat(property.charText().getText());
       } else if (property.BorderWidth()) {
@@ -123,11 +128,15 @@ export class RMGLParserListenerImpl extends RMGLParserListener {
       } else if (property.FontSize()) {
         node.fontSize = parseFloat(property.charText().getText());
       } else if (property.FontColor()) {
-        node.fontColor = parseInt(property.charText().getText());
+        node.fontColor = property.charText().getText();
       } else if (property.HorizonAlign()) {
-        node.horizonAlign = convert2TextAlignType(parseInt(property.charText().getText()));
+        node.horizonAlign = convert2TextAlignType(
+          parseInt(property.charText().getText()),
+        );
       } else if (property.VerticalAlign()) {
-        node.verticalAlign = convert2TextAlignType(parseInt(property.charText().getText()));
+        node.verticalAlign = convert2TextAlignType(
+          parseInt(property.charText().getText()),
+        );
       }
     }
   }

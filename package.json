@@ -1,7 +1,7 @@
 {
   "name": "dahongpao-core",
   "private": false,
-  "version": "0.0.2-fix-12",
+  "version": "0.0.2-fix-13",
   "main": "dist/dahongpao-core.umd.cjs",
   "module": "dist/dahongpao-core.js",
   "type": "module",

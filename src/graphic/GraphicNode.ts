@@ -38,7 +38,7 @@ export class GraphicNode implements IGraphicElement {
   /**
    * 节点颜色信息
    */
-  color: number = 0xfbfbfb;
+  color: string = "#fbfbfb";
   /**
    * 节点文本信息
    */
@@ -54,7 +54,7 @@ export class GraphicNode implements IGraphicElement {
   /**
    * 节点描边颜色
    */
-  borderColor: number = 0x000000;
+  borderColor: string = "#000000";
   /**
    * 节点描边透明度
    */
@@ -62,7 +62,7 @@ export class GraphicNode implements IGraphicElement {
   /**
    * 节点文字颜色
    */
-  fontColor: number = 0x000000;
+  fontColor: string = "#000000";
   /**
    * 节点文字字号大小
    */
@@ -70,7 +70,7 @@ export class GraphicNode implements IGraphicElement {
   /**
    * 字体
    */
-  fontFamily:string = 'Arial';
+  fontFamily: string = "Arial";
   /**
    * 节点z-index,表示层级
    */
