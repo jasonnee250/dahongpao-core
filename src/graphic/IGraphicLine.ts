@@ -13,7 +13,7 @@ export abstract class IGraphicLine implements IGraphicElement {
   /**
    * 颜色
    */
-  color: number = 0x000000;
+  color: string = "#000000";
   /**
    * 透明度
    */
@@ -25,7 +25,7 @@ export abstract class IGraphicLine implements IGraphicElement {
   /**
    * 字体颜色
    */
-  fontColor: number = 0x000000;
+  fontColor: string = "#000000";
   /**
    * 字体字号大小
    */
