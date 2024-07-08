@@ -1,6 +1,7 @@
 import { IGraphicElement } from "./IGraphicElement.ts";
 import { LineArrowType } from "@/basic/LineArrowType.ts";
 import { RectNode } from "@/basic/RectNode.ts";
+import {Point} from "@/basic";
 
 /**
  * 画布中绘制线基类
@@ -56,4 +57,8 @@ export abstract class IGraphicLine implements IGraphicElement {
    * 返回外接矩形
    */
   abstract getRectNode(): RectNode;
+
+  contains(_point: Point): boolean {
+    return false;
+  }
 }

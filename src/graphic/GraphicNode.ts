@@ -2,6 +2,7 @@ import { RectNode } from "@/basic/RectNode.ts";
 import { IGraphicElement } from "./IGraphicElement.ts";
 import { GraphicNodeType } from "@/basic/GraphicNodeType.ts";
 import { TextAlignType } from "@/basic/TextAlignType.ts";
+import { Point } from "@/basic/Point.ts";
 
 /**
  * 图形绘制节点基本数据类型
@@ -87,6 +88,10 @@ export class GraphicNode implements IGraphicElement {
   constructor(id: string) {
     this.id = id;
   }
+
+  contains(_point: Point): boolean {
+        return false;
+    }
 
   /**
    * 节点绘制方法，默认空实现

@@ -40,9 +40,15 @@ export class AffineMatrix {
 
   rotate2(rad: number): AffineMatrix {
     this.a = Math.cos(rad);
-    this.b = -Math.sin(rad);
-    this.d = Math.sin(rad);
-    this.e = Math.cos(rad);
+    this.c = -Math.sin(rad);
+    this.b = Math.sin(rad);
+    this.d = Math.cos(rad);
+    return this;
+  }
+
+  scale(sx:number,sy:number):AffineMatrix{
+    this.a=sx;
+    this.d=sy;
     return this;
   }
 
@@ -52,7 +58,7 @@ export class AffineMatrix {
    * @param y
    */
   translate(x: number, y: number): AffineMatrix {
-    this.c = x;
+    this.e = x;
     this.f = y;
     return this;
   }
@@ -63,13 +69,13 @@ export class AffineMatrix {
    */
   crossProduct(matrix: AffineMatrix): AffineMatrix {
     const res = new AffineMatrix();
-    res.a = this.a * matrix.a + this.b * matrix.d;
-    res.b = this.a * matrix.b + this.b * matrix.e;
-    res.c = this.a * matrix.c + this.b * matrix.f + this.c;
+    res.a = this.a * matrix.a + this.c * matrix.b;
+    res.c = this.a * matrix.c + this.c * matrix.d;
+    res.e = this.a * matrix.e + this.c * matrix.f + this.e;
 
-    res.d = this.d * matrix.a + this.e * matrix.d;
-    res.e = this.d * matrix.b + this.e * matrix.e;
-    res.f = this.d * matrix.c + this.e * matrix.f + this.f;
+    res.b = this.b * matrix.a + this.d * matrix.b;
+    res.d = this.b * matrix.c + this.d * matrix.d;
+    res.f = this.b * matrix.e + this.d * matrix.f + this.f;
     return res;
   }
 
