@@ -67,7 +67,7 @@ export interface GMLRender {
    * @param sx
    * @param sy
    */
-  scale(sx: number, sy: number): void;
+  scale(sx: number, sy: number, p?: Point): void;
 
   /**
    * 画布整体平移变换

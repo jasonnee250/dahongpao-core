@@ -46,9 +46,9 @@ export class AffineMatrix {
     return this;
   }
 
-  scale(sx:number,sy:number):AffineMatrix{
-    this.a=sx;
-    this.d=sy;
+  scale(sx: number, sy: number): AffineMatrix {
+    this.a = sx;
+    this.d = sy;
     return this;
   }
 
@@ -88,5 +88,22 @@ export class AffineMatrix {
       this.a * p.x + this.c * p.y + this.e,
       this.b * p.x + this.d * p.y + this.f,
     );
+  }
+
+  inverseMatrix(): AffineMatrix {
+    const m = AffineMatrix.generateMatrix();
+    const a1 = this.d / (this.a * this.d - this.b * this.c);
+    const a2 = -this.c / (this.a * this.d - this.b * this.c);
+    const a3 = 0;
+    const a4 = -this.b / (this.a * this.d - this.b * this.c);
+    const a5 = this.a / (this.a * this.d - this.b * this.c);
+    const a6 = 0;
+    m.a = a1;
+    m.c = a2;
+    m.e = a3;
+    m.b = a4;
+    m.d = a5;
+    m.f = a6;
+    return m;
   }
 }
