@@ -58,6 +58,10 @@ export abstract class IGraphicLine implements IGraphicElement {
    */
   abstract getRectNode(): RectNode;
 
+  getBounds(): RectNode{
+    return this.getRectNode();
+  }
+
   contains(_point: Point): boolean {
     return false;
   }

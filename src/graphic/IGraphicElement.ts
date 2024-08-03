@@ -24,6 +24,11 @@ export interface IGraphicElement {
   getRectNode(): RectNode;
 
   /**
+   * 返回外接矩形大小,普通情况下实现同 getRectNode()
+   */
+  getBounds(): RectNode;
+
+  /**
    * judge point is in graphic
    */
   contains(point:Point):boolean;

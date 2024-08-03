@@ -1,2 +1,2 @@
-export * from "./GMLRender.ts";
-export * from "./GMLData.ts";
+export * from "./GMLRender";
+export * from "./GMLData";

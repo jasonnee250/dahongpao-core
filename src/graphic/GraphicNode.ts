@@ -3,6 +3,7 @@ import { IGraphicElement } from "./IGraphicElement.ts";
 import { GraphicNodeType } from "@/basic/GraphicNodeType.ts";
 import { TextAlignType } from "@/basic/TextAlignType.ts";
 import { Point } from "@/basic/Point.ts";
+import {LineDashType} from "@/graphic/LineDashType.ts";
 
 /**
  * 图形绘制节点基本数据类型
@@ -84,6 +85,10 @@ export class GraphicNode implements IGraphicElement {
    * 文本纵向对齐形式
    */
   verticalAlign: TextAlignType = TextAlignType.CENTER;
+  /**
+   * 描边虚线类型
+   */
+  lineDashType=LineDashType.None;
 
   constructor(id: string) {
     this.id = id;
@@ -99,6 +104,11 @@ export class GraphicNode implements IGraphicElement {
   draw(): void {}
 
   /**
+   * 节点绘制方法，默认空实现，绘制在_ctx上
+   */
+  drawOnGLCtx(_ctx:CanvasRenderingContext2D):void{}
+
+  /**
    * 返回节点外接矩形
    */
   getRectNode(): RectNode {
@@ -109,5 +119,9 @@ export class GraphicNode implements IGraphicElement {
       maxX: this.x + this.w + 2 * this.borderWidth,
       maxY: this.y + this.h + 2 * this.borderWidth,
     };
+  }
+
+  getBounds(): RectNode {
+    return this.getRectNode();
   }
 }

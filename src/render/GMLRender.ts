@@ -115,4 +115,10 @@ export interface GMLRender {
    * 获取当前渲染引擎scale
    */
   getScale(): number;
+
+  /**
+   * 缩放到指定比例
+   * @param scaleNumber
+   */
+  scaleToCenter(scaleNumber:number):void;
 }
